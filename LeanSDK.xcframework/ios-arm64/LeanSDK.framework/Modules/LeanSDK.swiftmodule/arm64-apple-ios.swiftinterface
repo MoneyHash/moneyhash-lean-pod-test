@@ -1,0 +1,692 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios10.3 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name LeanSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Foundation
+@_exported import LeanSDK
+import Swift
+import SwiftUI
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct LeanView : SwiftUI.UIViewRepresentable {
+  @_Concurrency.MainActor @preconcurrency public func makeUIView(context: LeanSDK.LeanView.Context) -> WebKit.WKWebView
+  @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: WebKit.WKWebView, context: LeanSDK.LeanView.Context)
+  @available(iOS 13.0, *)
+  public typealias Body = Swift.Never
+  @available(iOS 13.0, *)
+  public typealias Coordinator = Swift.Void
+  @available(iOS 13.0, *)
+  public typealias UIViewType = WebKit.WKWebView
+}
+public enum LeanPermission : Swift.String {
+  case Balance
+  case Identity
+  case Accounts
+  case Payments
+  case Transactions
+  case Identities
+  case Beneficiaries
+  case DirectDebits
+  case StandingOrders
+  case ScheduledPayments
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct LeanCustomization : Swift.Codable {
+  public let theme_color: Swift.String?
+  public let theme_color_dark: Swift.String?
+  public let button_text_color: Swift.String?
+  public let button_text_color_dark: Swift.String?
+  public let link_color: Swift.String?
+  public let overlay_color: Swift.String?
+  public let button_border_radius: Swift.String?
+  public let dialog_mode: Swift.String?
+  public init(themeColor: Swift.String? = nil, themeColorDark: Swift.String? = nil, buttonTextColor: Swift.String? = nil, buttonTextColorDark: Swift.String? = nil, linkColor: Swift.String? = nil, overlayColor: Swift.String? = nil, buttonBorderRadius: Swift.String? = nil, dialogMode: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum LeanCountry : Swift.String {
+  case SaudiArabia
+  case UnitedArabEmirates
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct LeanStatus {
+  public let status: Swift.String
+  public let message: Swift.String?
+  public let method: Swift.String
+  public let lastApiResponse: Swift.String?
+  public let exitPoint: Swift.String?
+  public let secondaryStatus: Swift.String?
+  public let bankDetails: LeanSDK.LeanCallbackBank?
+  public let exitIntentPoint: Swift.String?
+  public let exitSurveyReason: Swift.String?
+  public let leanCorrelationId: Swift.String?
+  public let userExitIntent: Swift.String?
+}
+public struct LeanCallbackBank {
+  public let bankIdentifier: Swift.String?
+  public let isSupported: Swift.Bool?
+}
+public struct LeanHandlers {
+  public typealias genericClosureType = (_ status: LeanSDK.LeanStatus) -> ()
+  public typealias errorClosureType = (_ status: LeanSDK.LeanStatus) -> ()
+}
+public enum LeanAuthenticationChannel : Swift.String, Swift.Codable {
+  case web
+  case mobile
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanPossessionFactorType : Swift.String, Swift.Codable {
+  case fido2SecurityKey
+  case passkey
+  case otpDevice
+  case otpApp
+  case smsOtp
+  case emailOtp
+  case pushNotification
+  case webauthnToken
+  case secureEnclaveKey
+  case hardwareOtpKey
+  case trustedDevice
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanKnowledgeFactorType : Swift.String, Swift.Codable {
+  case pin
+  case password
+  case securityQuestion
+  case smsOtp
+  case emailOtp
+  case otpPush
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanInherenceFactorType : Swift.String, Swift.Codable {
+  case biometric
+  case fingerprint
+  case faceRecognition
+  case irisScan
+  case voiceRecognition
+  case fidoBiometric
+  case deviceBiometrics
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanChallengeOutcome : Swift.String, Swift.Codable {
+  case pass
+  case fail
+  case notPerformed
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanAuthenticationFlow : Swift.String, Swift.Codable {
+  case mfa
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanDeviceType : Swift.String, Swift.Codable {
+  case mobile
+  case desktop
+  case tablet
+  case wearable
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanConnectionType : Swift.String, Swift.Codable {
+  case wifi
+  case cellular
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanScreenOrientation : Swift.String, Swift.Codable {
+  case portrait
+  case landscape
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanBindingStatus : Swift.String, Swift.Codable {
+  case active
+  case expired
+  case revoked
+  case suspended
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanBiometricType : Swift.String, Swift.Codable {
+  case fingerprint
+  case facialRecognition
+  case iris
+  case voicePrint
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanMotionSensorStatus : Swift.String, Swift.Codable {
+  case inMotion
+  case stationary
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanDeviceEnvironmentContext : Swift.String, Swift.Codable {
+  case vpnDetected
+  case emulatorDetected
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanScrollDirection : Swift.String, Swift.Codable {
+  case up
+  case down
+  case both
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanSuspiciousActivity : Swift.String, Swift.Codable {
+  case noSuspiciousActivity
+  case suspiciousActivityDetected
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanRecipientType : Swift.String, Swift.Codable {
+  case individual
+  case corporate
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanAddressType : Swift.String, Swift.Codable {
+  case business
+  case correspondence
+  case residential
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanChannel : Swift.String, Swift.Codable {
+  case web
+  case mobile
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanChannelType : Swift.String, Swift.Codable {
+  case ecommerce
+  case inStore
+  case inApp
+  case telephone
+  case mail
+  case recurringPayment
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanSubChannelType : Swift.String, Swift.Codable {
+  case webBrowser
+  case mobileApp
+  case smartTv
+  case wearableDevice
+  case posTerminal
+  case atm
+  case kioskTerminal
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanDeliveryTimeframe : Swift.String, Swift.Codable {
+  case electronicDelivery
+  case sameDayShipping
+  case overnightShipping
+  case moreThan1DayShipping
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanReorderItemsIndicator : Swift.String, Swift.Codable {
+  case firstTimeOrder
+  case reorder
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanPreOrderPurchaseIndicator : Swift.String, Swift.Codable {
+  case merchandiseAvailable
+  case futureAvailability
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LeanAddressMatchLevel : Swift.String, Swift.Codable {
+  case fullMatch
+  case partialMatch
+  case noMatch
+  case notApplicable
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct LeanPossessionFactor : Swift.Codable {
+  public let isUsed: Swift.Bool?
+  public let type: LeanSDK.LeanPossessionFactorType?
+  public init(isUsed: Swift.Bool? = nil, type: LeanSDK.LeanPossessionFactorType? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanKnowledgeFactor : Swift.Codable {
+  public let isUsed: Swift.Bool?
+  public let type: LeanSDK.LeanKnowledgeFactorType?
+  public init(isUsed: Swift.Bool? = nil, type: LeanSDK.LeanKnowledgeFactorType? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanInherenceFactor : Swift.Codable {
+  public let isUsed: Swift.Bool?
+  public let type: LeanSDK.LeanInherenceFactorType?
+  public init(isUsed: Swift.Bool? = nil, type: LeanSDK.LeanInherenceFactorType? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanAuthentication : Swift.Codable {
+  public let authenticationChannel: LeanSDK.LeanAuthenticationChannel?
+  public let possessionFactor: LeanSDK.LeanPossessionFactor?
+  public let knowledgeFactor: LeanSDK.LeanKnowledgeFactor?
+  public let inherenceFactor: LeanSDK.LeanInherenceFactor?
+  public let challengeOutcome: LeanSDK.LeanChallengeOutcome?
+  public let authenticationFlow: LeanSDK.LeanAuthenticationFlow?
+  public let authenticationValue: Swift.String?
+  public let challengeDateTime: Swift.String?
+  public init(authenticationChannel: LeanSDK.LeanAuthenticationChannel? = nil, possessionFactor: LeanSDK.LeanPossessionFactor? = nil, knowledgeFactor: LeanSDK.LeanKnowledgeFactor? = nil, inherenceFactor: LeanSDK.LeanInherenceFactor? = nil, challengeOutcome: LeanSDK.LeanChallengeOutcome? = nil, authenticationFlow: LeanSDK.LeanAuthenticationFlow? = nil, authenticationValue: Swift.String? = nil, challengeDateTime: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanLocalizedName : Swift.Codable {
+  public let en: Swift.String?
+  public let ar: Swift.String?
+  public init(en: Swift.String? = nil, ar: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanGeoLocation : Swift.Codable {
+  public let latitude: Swift.Double?
+  public let longitude: Swift.Double?
+  public init(latitude: Swift.Double? = nil, longitude: Swift.Double? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanDeviceManufacturer : Swift.Codable {
+  public let model: Swift.String?
+  public let manufacturer: Swift.String?
+  public init(model: Swift.String? = nil, manufacturer: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanScreenInformation : Swift.Codable {
+  public let pixelDensity: Swift.Double?
+  public let orientation: LeanSDK.LeanScreenOrientation?
+  public init(pixelDensity: Swift.Double? = nil, orientation: LeanSDK.LeanScreenOrientation? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanBatteryStatus : Swift.Codable {
+  public let level: Swift.Int?
+  public let isCharging: Swift.Bool?
+  public init(level: Swift.Int? = nil, isCharging: Swift.Bool? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanTouchSupport : Swift.Codable {
+  public let supported: Swift.Bool?
+  public let maxTouchPoints: Swift.Int?
+  public init(supported: Swift.Bool? = nil, maxTouchPoints: Swift.Int? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanMotionSensors : Swift.Codable {
+  public let status: LeanSDK.LeanMotionSensorStatus?
+  public let accelerometer: Swift.Bool?
+  public let gyroscope: Swift.Bool?
+  public init(status: LeanSDK.LeanMotionSensorStatus? = nil, accelerometer: Swift.Bool? = nil, gyroscope: Swift.Bool? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanDeviceInformation : Swift.Codable {
+  public let deviceId: Swift.String?
+  public let alternativeDeviceId: Swift.String?
+  public let deviceOperatingSystem: Swift.String?
+  public let deviceOperatingSystemVersion: Swift.String?
+  public let deviceBindingId: Swift.String?
+  public let lastBindingDateTime: Swift.String?
+  public let bindingDuration: Swift.String?
+  public let bindingStatus: LeanSDK.LeanBindingStatus?
+  public let deviceType: LeanSDK.LeanDeviceType?
+  public let deviceManufacturer: LeanSDK.LeanDeviceManufacturer?
+  public let deviceLanguage: Swift.String?
+  public let deviceLocalDateTime: Swift.String?
+  public let connectionType: LeanSDK.LeanConnectionType?
+  public let screenInformation: LeanSDK.LeanScreenInformation?
+  public let batteryStatus: LeanSDK.LeanBatteryStatus?
+  public let touchSupport: LeanSDK.LeanTouchSupport?
+  public let motionSensors: LeanSDK.LeanMotionSensors?
+  public let deviceEnvironmentContext: [LeanSDK.LeanDeviceEnvironmentContext]?
+  public init(deviceId: Swift.String? = nil, alternativeDeviceId: Swift.String? = nil, deviceOperatingSystem: Swift.String? = nil, deviceOperatingSystemVersion: Swift.String? = nil, deviceBindingId: Swift.String? = nil, lastBindingDateTime: Swift.String? = nil, bindingDuration: Swift.String? = nil, bindingStatus: LeanSDK.LeanBindingStatus? = nil, deviceType: LeanSDK.LeanDeviceType? = nil, deviceManufacturer: LeanSDK.LeanDeviceManufacturer? = nil, deviceLanguage: Swift.String? = nil, deviceLocalDateTime: Swift.String? = nil, connectionType: LeanSDK.LeanConnectionType? = nil, screenInformation: LeanSDK.LeanScreenInformation? = nil, batteryStatus: LeanSDK.LeanBatteryStatus? = nil, touchSupport: LeanSDK.LeanTouchSupport? = nil, motionSensors: LeanSDK.LeanMotionSensors? = nil, deviceEnvironmentContext: [LeanSDK.LeanDeviceEnvironmentContext]? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanBiometricCapabilities : Swift.Codable {
+  public let supportsBiometric: Swift.Bool?
+  public let biometricTypes: [LeanSDK.LeanBiometricType]?
+  public init(supportsBiometric: Swift.Bool? = nil, biometricTypes: [LeanSDK.LeanBiometricType]? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanAppInformation : Swift.Codable {
+  public let appVersion: Swift.String?
+  public let packageName: Swift.String?
+  public let buildNumber: Swift.String?
+  public init(appVersion: Swift.String? = nil, packageName: Swift.String? = nil, buildNumber: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanScrollBehavior : Swift.Codable {
+  public let direction: LeanSDK.LeanScrollDirection?
+  public let speed: Swift.Double?
+  public let frequency: Swift.Double?
+  public init(direction: LeanSDK.LeanScrollDirection? = nil, speed: Swift.Double? = nil, frequency: Swift.Double? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanUserBehavior : Swift.Codable {
+  public let scrollBehavior: LeanSDK.LeanScrollBehavior?
+  public init(scrollBehavior: LeanSDK.LeanScrollBehavior? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanTransactionHistory : Swift.Codable {
+  public let lastDay: Swift.Int?
+  public let lastYear: Swift.Int?
+  public init(lastDay: Swift.Int? = nil, lastYear: Swift.Int? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanAccountRiskIndicators : Swift.Codable {
+  public let userOnboardingDateTime: Swift.String?
+  public let lastAccountChangeDate: Swift.String?
+  public let lastPasswordChangeDate: Swift.String?
+  public let suspiciousActivity: LeanSDK.LeanSuspiciousActivity?
+  public let transactionHistory: LeanSDK.LeanTransactionHistory?
+  public init(userOnboardingDateTime: Swift.String? = nil, lastAccountChangeDate: Swift.String? = nil, lastPasswordChangeDate: Swift.String? = nil, suspiciousActivity: LeanSDK.LeanSuspiciousActivity? = nil, transactionHistory: LeanSDK.LeanTransactionHistory? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanDebtorIndicators : Swift.Codable {
+  public let authentication: LeanSDK.LeanAuthentication?
+  public let userName: LeanSDK.LeanLocalizedName?
+  public let geoLocation: LeanSDK.LeanGeoLocation?
+  public let deviceInformation: LeanSDK.LeanDeviceInformation?
+  public let biometricCapabilities: LeanSDK.LeanBiometricCapabilities?
+  public let appInformation: LeanSDK.LeanAppInformation?
+  public let userBehavior: LeanSDK.LeanUserBehavior?
+  public let accountRiskIndicators: LeanSDK.LeanAccountRiskIndicators?
+  public let supplementaryData: [Swift.String : Any]?
+  public init(authentication: LeanSDK.LeanAuthentication? = nil, userName: LeanSDK.LeanLocalizedName? = nil, geoLocation: LeanSDK.LeanGeoLocation? = nil, deviceInformation: LeanSDK.LeanDeviceInformation? = nil, biometricCapabilities: LeanSDK.LeanBiometricCapabilities? = nil, appInformation: LeanSDK.LeanAppInformation? = nil, userBehavior: LeanSDK.LeanUserBehavior? = nil, accountRiskIndicators: LeanSDK.LeanAccountRiskIndicators? = nil, supplementaryData: [Swift.String : Any]? = nil)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct LeanNationalAddress : Swift.Codable {
+  public let addressType: LeanSDK.LeanAddressType?
+  public let addressLine: Swift.String?
+  public let buildingNumber: Swift.String?
+  public let buildingName: Swift.String?
+  public let floor: Swift.String?
+  public let streetName: Swift.String?
+  public let districtName: Swift.String?
+  public let postBox: Swift.String?
+  public let townName: Swift.String?
+  public let region: Swift.String?
+  public let country: Swift.String?
+  public init(addressType: LeanSDK.LeanAddressType? = nil, addressLine: Swift.String? = nil, buildingNumber: Swift.String? = nil, buildingName: Swift.String? = nil, floor: Swift.String? = nil, streetName: Swift.String? = nil, districtName: Swift.String? = nil, postBox: Swift.String? = nil, townName: Swift.String? = nil, region: Swift.String? = nil, country: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanDestinationDeliveryAddress : Swift.Codable {
+  public let recipientType: LeanSDK.LeanRecipientType?
+  public let recipientName: LeanSDK.LeanLocalizedName?
+  public let nationalAddress: [LeanSDK.LeanNationalAddress]?
+  public init(recipientType: LeanSDK.LeanRecipientType? = nil, recipientName: LeanSDK.LeanLocalizedName? = nil, nationalAddress: [LeanSDK.LeanNationalAddress]? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanMerchantRisk : Swift.Codable {
+  public let deliveryTimeframe: LeanSDK.LeanDeliveryTimeframe?
+  public let reorderItemsIndicator: LeanSDK.LeanReorderItemsIndicator?
+  public let preOrderPurchaseIndicator: LeanSDK.LeanPreOrderPurchaseIndicator?
+  public let isGiftCardPurchase: Swift.Bool?
+  public let isDeliveryAddressMatchesBilling: Swift.Bool?
+  public let addressMatchLevel: LeanSDK.LeanAddressMatchLevel?
+  public init(deliveryTimeframe: LeanSDK.LeanDeliveryTimeframe? = nil, reorderItemsIndicator: LeanSDK.LeanReorderItemsIndicator? = nil, preOrderPurchaseIndicator: LeanSDK.LeanPreOrderPurchaseIndicator? = nil, isGiftCardPurchase: Swift.Bool? = nil, isDeliveryAddressMatchesBilling: Swift.Bool? = nil, addressMatchLevel: LeanSDK.LeanAddressMatchLevel? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanTransactionIndicators : Swift.Codable {
+  public let isCustomerPresent: Swift.Bool?
+  public let isContractPresent: Swift.Bool?
+  public let channel: LeanSDK.LeanChannel?
+  public let channelType: LeanSDK.LeanChannelType?
+  public let subChannelType: LeanSDK.LeanSubChannelType?
+  public let merchantRisk: LeanSDK.LeanMerchantRisk?
+  public let supplementaryData: [Swift.String : Any]?
+  public init(isCustomerPresent: Swift.Bool? = nil, isContractPresent: Swift.Bool? = nil, channel: LeanSDK.LeanChannel? = nil, channelType: LeanSDK.LeanChannelType? = nil, subChannelType: LeanSDK.LeanSubChannelType? = nil, merchantRisk: LeanSDK.LeanMerchantRisk? = nil, supplementaryData: [Swift.String : Any]? = nil)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct LeanPaymentProcess : Swift.Codable {
+  public let totalDuration: Swift.Int?
+  public let currentSessionAttempts: Swift.Int?
+  public let currentSessionFailedAttempts: Swift.Int?
+  public let last24HourAttempts: Swift.Int?
+  public let last24HourFailedAttempts: Swift.Int?
+  public init(totalDuration: Swift.Int? = nil, currentSessionAttempts: Swift.Int? = nil, currentSessionFailedAttempts: Swift.Int? = nil, last24HourAttempts: Swift.Int? = nil, last24HourFailedAttempts: Swift.Int? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LeanRiskDetails : Swift.Codable {
+  public let debtorIndicators: LeanSDK.LeanDebtorIndicators?
+  public let destinationDeliveryAddress: LeanSDK.LeanDestinationDeliveryAddress?
+  public let transactionIndicators: LeanSDK.LeanTransactionIndicators?
+  public let paymentProcess: LeanSDK.LeanPaymentProcess?
+  public init(debtorIndicators: LeanSDK.LeanDebtorIndicators? = nil, destinationDeliveryAddress: LeanSDK.LeanDestinationDeliveryAddress? = nil, transactionIndicators: LeanSDK.LeanTransactionIndicators? = nil, paymentProcess: LeanSDK.LeanPaymentProcess? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class Lean {
+  public static let manager: LeanSDK.Lean
+  @available(iOS 13.0, *)
+  public func generateView() -> LeanSDK.LeanView
+  public func setup(appToken: Swift.String, sandbox: Swift.Bool, version: Swift.String, country: LeanSDK.LeanCountry? = LeanCountry.UnitedArabEmirates, language: Swift.String? = "en", debug: Swift.Bool = false, env: Swift.String = "production")
+  public func link(customerId: Swift.String, permissions: [LeanSDK.LeanPermission], bankId: Swift.String?, customization: LeanSDK.LeanCustomization?, failRedirectUrl: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, accessToken: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func link(presentingViewController: UIKit.UIViewController, customerId: Swift.String, permissions: [LeanSDK.LeanPermission], bankId: Swift.String?, customization: LeanSDK.LeanCustomization?, failRedirectUrl: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, accessToken: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func reconnect(reconnectId: Swift.String, customization: LeanSDK.LeanCustomization?, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func reconnect(presentingViewController: UIKit.UIViewController, reconnectId: Swift.String, customization: LeanSDK.LeanCustomization?, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func createPaymentSource(customerId: Swift.String, bankId: Swift.String?, customization: LeanSDK.LeanCustomization?, failRedirectUrl: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func createPaymentSource(customerId: Swift.String, bankId: Swift.String?, paymentDestinationId: Swift.String?, customization: LeanSDK.LeanCustomization?, failRedirectUrl: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func createPaymentSource(presentingViewController: UIKit.UIViewController, customerId: Swift.String, bankId: Swift.String?, customization: LeanSDK.LeanCustomization?, failRedirectUrl: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func createPaymentSource(presentingViewController: UIKit.UIViewController, customerId: Swift.String, bankId: Swift.String?, paymentDestinationId: Swift.String?, customization: LeanSDK.LeanCustomization?, failRedirectUrl: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func updatePaymentSource(customerId: Swift.String, paymentSourceId: Swift.String, paymentDestinationId: Swift.String, customization: LeanSDK.LeanCustomization?, endUserId: Swift.String? = nil, accessToken: Swift.String? = nil, entityId: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func updatePaymentSource(presentingViewController: UIKit.UIViewController, customerId: Swift.String, paymentSourceId: Swift.String, paymentDestinationId: Swift.String, customization: LeanSDK.LeanCustomization?, endUserId: Swift.String? = nil, accessToken: Swift.String? = nil, entityId: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func pay(paymentIntentId: Swift.String?, bulkPaymentIntentId: Swift.String?, accountId: Swift.String?, bankId: Swift.String? = nil, customization: LeanSDK.LeanCustomization?, endUserId: Swift.String? = nil, failRedirectUrl: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, riskDetails: LeanSDK.LeanRiskDetails? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func pay(presentingViewController: UIKit.UIViewController, paymentIntentId: Swift.String?, bulkPaymentIntentId: Swift.String?, accountId: Swift.String?, bankId: Swift.String? = nil, customization: LeanSDK.LeanCustomization?, endUserId: Swift.String? = nil, failRedirectUrl: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, riskDetails: LeanSDK.LeanRiskDetails? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func connect(customerId: Swift.String, permissions: [LeanSDK.LeanPermission], paymentDestinationId: Swift.String?, bankId: Swift.String?, customization: LeanSDK.LeanCustomization?, failRedirectUrl: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, accountType: Swift.String? = nil, endUserId: Swift.String? = nil, accessTo: Swift.String? = nil, accessFrom: Swift.String? = nil, accessToken: Swift.String? = nil, showConsentExplanation: Swift.Bool? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, customerMetadata: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func connect(presentingViewController: UIKit.UIViewController, customerId: Swift.String, permissions: [LeanSDK.LeanPermission], paymentDestinationId: Swift.String?, bankId: Swift.String?, customization: LeanSDK.LeanCustomization?, failRedirectUrl: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, accountType: Swift.String? = nil, endUserId: Swift.String? = nil, accessTo: Swift.String? = nil, accessFrom: Swift.String? = nil, accessToken: Swift.String? = nil, showConsentExplanation: Swift.Bool? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, customerMetadata: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func verifyAddress(customerId: Swift.String, customerName: Swift.String, permissions: [LeanSDK.LeanPermission], customization: LeanSDK.LeanCustomization?, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func verifyAddress(presentingViewController: UIKit.UIViewController, customerId: Swift.String, customerName: Swift.String, permissions: [LeanSDK.LeanPermission], customization: LeanSDK.LeanCustomization?, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func authorizeConsent(customerId: Swift.String, consentId: Swift.String, failRedirectUrl: Swift.String, successRedirectUrl: Swift.String, customization: LeanSDK.LeanCustomization? = nil, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, riskDetails: LeanSDK.LeanRiskDetails? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func authorizeConsent(presentingViewController: UIKit.UIViewController, customerId: Swift.String, consentId: Swift.String, failRedirectUrl: Swift.String, successRedirectUrl: Swift.String, customization: LeanSDK.LeanCustomization? = nil, accessToken: Swift.String? = nil, destinationAlias: Swift.String? = nil, destinationAvatar: Swift.String? = nil, riskDetails: LeanSDK.LeanRiskDetails? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func checkout(paymentIntentId: Swift.String, customization: LeanSDK.LeanCustomization?, customerName: Swift.String? = nil, bankId: Swift.String? = nil, accessToken: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, failRedirectUrl: Swift.String? = nil, riskDetails: LeanSDK.LeanRiskDetails? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func checkout(presentingViewController: UIKit.UIViewController, paymentIntentId: Swift.String, customization: LeanSDK.LeanCustomization?, customerName: Swift.String? = nil, bankId: Swift.String? = nil, accessToken: Swift.String? = nil, successRedirectUrl: Swift.String? = nil, failRedirectUrl: Swift.String? = nil, riskDetails: LeanSDK.LeanRiskDetails? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func manageConsents(customerId: Swift.String, customization: LeanSDK.LeanCustomization?, accessToken: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func manageConsents(presentingViewController: UIKit.UIViewController, customerId: Swift.String, customization: LeanSDK.LeanCustomization?, accessToken: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func captureRedirect(customerId: Swift.String, customization: LeanSDK.LeanCustomization?, accessToken: Swift.String? = nil, consentAttemptId: Swift.String? = nil, granularStatusCode: Swift.String? = nil, statusAdditionalInfo: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  public func captureRedirect(presentingViewController: UIKit.UIViewController, customerId: Swift.String, customization: LeanSDK.LeanCustomization?, accessToken: Swift.String? = nil, consentAttemptId: Swift.String? = nil, granularStatusCode: Swift.String? = nil, statusAdditionalInfo: Swift.String? = nil, success: @escaping LeanSDK.LeanHandlers.genericClosureType, error: @escaping LeanSDK.LeanHandlers.errorClosureType)
+  @objc deinit
+}
+@available(iOS 13.0, *)
+extension LeanSDK.LeanView : Swift.Sendable {}
+extension LeanSDK.LeanPermission : Swift.Equatable {}
+extension LeanSDK.LeanPermission : Swift.Hashable {}
+extension LeanSDK.LeanPermission : Swift.RawRepresentable {}
+extension LeanSDK.LeanCountry : Swift.Equatable {}
+extension LeanSDK.LeanCountry : Swift.Hashable {}
+extension LeanSDK.LeanCountry : Swift.RawRepresentable {}
+extension LeanSDK.LeanAuthenticationChannel : Swift.Equatable {}
+extension LeanSDK.LeanAuthenticationChannel : Swift.Hashable {}
+extension LeanSDK.LeanAuthenticationChannel : Swift.RawRepresentable {}
+extension LeanSDK.LeanPossessionFactorType : Swift.Equatable {}
+extension LeanSDK.LeanPossessionFactorType : Swift.Hashable {}
+extension LeanSDK.LeanPossessionFactorType : Swift.RawRepresentable {}
+extension LeanSDK.LeanKnowledgeFactorType : Swift.Equatable {}
+extension LeanSDK.LeanKnowledgeFactorType : Swift.Hashable {}
+extension LeanSDK.LeanKnowledgeFactorType : Swift.RawRepresentable {}
+extension LeanSDK.LeanInherenceFactorType : Swift.Equatable {}
+extension LeanSDK.LeanInherenceFactorType : Swift.Hashable {}
+extension LeanSDK.LeanInherenceFactorType : Swift.RawRepresentable {}
+extension LeanSDK.LeanChallengeOutcome : Swift.Equatable {}
+extension LeanSDK.LeanChallengeOutcome : Swift.Hashable {}
+extension LeanSDK.LeanChallengeOutcome : Swift.RawRepresentable {}
+extension LeanSDK.LeanAuthenticationFlow : Swift.Equatable {}
+extension LeanSDK.LeanAuthenticationFlow : Swift.Hashable {}
+extension LeanSDK.LeanAuthenticationFlow : Swift.RawRepresentable {}
+extension LeanSDK.LeanDeviceType : Swift.Equatable {}
+extension LeanSDK.LeanDeviceType : Swift.Hashable {}
+extension LeanSDK.LeanDeviceType : Swift.RawRepresentable {}
+extension LeanSDK.LeanConnectionType : Swift.Equatable {}
+extension LeanSDK.LeanConnectionType : Swift.Hashable {}
+extension LeanSDK.LeanConnectionType : Swift.RawRepresentable {}
+extension LeanSDK.LeanScreenOrientation : Swift.Equatable {}
+extension LeanSDK.LeanScreenOrientation : Swift.Hashable {}
+extension LeanSDK.LeanScreenOrientation : Swift.RawRepresentable {}
+extension LeanSDK.LeanBindingStatus : Swift.Equatable {}
+extension LeanSDK.LeanBindingStatus : Swift.Hashable {}
+extension LeanSDK.LeanBindingStatus : Swift.RawRepresentable {}
+extension LeanSDK.LeanBiometricType : Swift.Equatable {}
+extension LeanSDK.LeanBiometricType : Swift.Hashable {}
+extension LeanSDK.LeanBiometricType : Swift.RawRepresentable {}
+extension LeanSDK.LeanMotionSensorStatus : Swift.Equatable {}
+extension LeanSDK.LeanMotionSensorStatus : Swift.Hashable {}
+extension LeanSDK.LeanMotionSensorStatus : Swift.RawRepresentable {}
+extension LeanSDK.LeanDeviceEnvironmentContext : Swift.Equatable {}
+extension LeanSDK.LeanDeviceEnvironmentContext : Swift.Hashable {}
+extension LeanSDK.LeanDeviceEnvironmentContext : Swift.RawRepresentable {}
+extension LeanSDK.LeanScrollDirection : Swift.Equatable {}
+extension LeanSDK.LeanScrollDirection : Swift.Hashable {}
+extension LeanSDK.LeanScrollDirection : Swift.RawRepresentable {}
+extension LeanSDK.LeanSuspiciousActivity : Swift.Equatable {}
+extension LeanSDK.LeanSuspiciousActivity : Swift.Hashable {}
+extension LeanSDK.LeanSuspiciousActivity : Swift.RawRepresentable {}
+extension LeanSDK.LeanRecipientType : Swift.Equatable {}
+extension LeanSDK.LeanRecipientType : Swift.Hashable {}
+extension LeanSDK.LeanRecipientType : Swift.RawRepresentable {}
+extension LeanSDK.LeanAddressType : Swift.Equatable {}
+extension LeanSDK.LeanAddressType : Swift.Hashable {}
+extension LeanSDK.LeanAddressType : Swift.RawRepresentable {}
+extension LeanSDK.LeanChannel : Swift.Equatable {}
+extension LeanSDK.LeanChannel : Swift.Hashable {}
+extension LeanSDK.LeanChannel : Swift.RawRepresentable {}
+extension LeanSDK.LeanChannelType : Swift.Equatable {}
+extension LeanSDK.LeanChannelType : Swift.Hashable {}
+extension LeanSDK.LeanChannelType : Swift.RawRepresentable {}
+extension LeanSDK.LeanSubChannelType : Swift.Equatable {}
+extension LeanSDK.LeanSubChannelType : Swift.Hashable {}
+extension LeanSDK.LeanSubChannelType : Swift.RawRepresentable {}
+extension LeanSDK.LeanDeliveryTimeframe : Swift.Equatable {}
+extension LeanSDK.LeanDeliveryTimeframe : Swift.Hashable {}
+extension LeanSDK.LeanDeliveryTimeframe : Swift.RawRepresentable {}
+extension LeanSDK.LeanReorderItemsIndicator : Swift.Equatable {}
+extension LeanSDK.LeanReorderItemsIndicator : Swift.Hashable {}
+extension LeanSDK.LeanReorderItemsIndicator : Swift.RawRepresentable {}
+extension LeanSDK.LeanPreOrderPurchaseIndicator : Swift.Equatable {}
+extension LeanSDK.LeanPreOrderPurchaseIndicator : Swift.Hashable {}
+extension LeanSDK.LeanPreOrderPurchaseIndicator : Swift.RawRepresentable {}
+extension LeanSDK.LeanAddressMatchLevel : Swift.Equatable {}
+extension LeanSDK.LeanAddressMatchLevel : Swift.Hashable {}
+extension LeanSDK.LeanAddressMatchLevel : Swift.RawRepresentable {}
