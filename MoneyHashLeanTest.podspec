@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MoneyHashLeanTest'
-  s.version          = '1.0.9'
+  s.version          = '1.0.10'
   s.summary          = 'MoneyHash + Lean integration'
   s.description      = 'MoneyHash integration with Lean SDK using vendored xcframeworks.'
 
@@ -8,8 +8,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.authors          = { 'MoneyHash' => 'tech@moneyhash.io' }
 
-  # Required even for local pods
-  s.source           = { :path => '.' }
+  s.source           = { :git => 'https://github.com/MoneyHash/moneyhash-lean-pod-test.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '14.0'
 
