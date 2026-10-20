@@ -21411,7 +21411,7 @@
           {
             "kind": "Function",
             "name": "reconnect",
-            "printedName": "reconnect(reconnectId:customization:accessToken:destinationAlias:destinationAvatar:success:error:)",
+            "printedName": "reconnect(reconnectId:customization:accessToken:destinationAlias:destinationAvatar:customerMetadata:success:error:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -21436,6 +21436,21 @@
                     "usr": "s:7LeanSDK0A13CustomizationV"
                   }
                 ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
                 "usr": "s:Sq"
               },
               {
@@ -21521,8 +21536,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7LeanSDK0A0C9reconnect0C2Id13customization11accessToken16destinationAlias0H6Avatar7success5errorySS_AA0A13CustomizationVSgSSSgA2OyAA0A6StatusVcyAQctF",
-            "mangledName": "$s7LeanSDK0A0C9reconnect0C2Id13customization11accessToken16destinationAlias0H6Avatar7success5errorySS_AA0A13CustomizationVSgSSSgA2OyAA0A6StatusVcyAQctF",
+            "usr": "s:7LeanSDK0A0C9reconnect0C2Id13customization11accessToken16destinationAlias0H6Avatar16customerMetadata7success5errorySS_AA0A13CustomizationVSgSSSgA3PyAA0A6StatusVcyARctF",
+            "mangledName": "$s7LeanSDK0A0C9reconnect0C2Id13customization11accessToken16destinationAlias0H6Avatar16customerMetadata7success5errorySS_AA0A13CustomizationVSgSSSgA3PyAA0A6StatusVcyARctF",
             "moduleName": "LeanSDK",
             "declAttributes": [
               "AccessControl",
@@ -21533,7 +21548,7 @@
           {
             "kind": "Function",
             "name": "reconnect",
-            "printedName": "reconnect(presentingViewController:reconnectId:customization:accessToken:destinationAlias:destinationAvatar:success:error:)",
+            "printedName": "reconnect(presentingViewController:reconnectId:customization:accessToken:destinationAlias:destinationAvatar:customerMetadata:success:error:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -21612,6 +21627,21 @@
                 "usr": "s:Sq"
               },
               {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
                 "kind": "TypeFunc",
                 "name": "Function",
                 "printedName": "(LeanSDK.LeanStatus) -> ()",
@@ -21649,8 +21679,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7LeanSDK0A0C9reconnect24presentingViewController0C2Id13customization11accessToken16destinationAlias0K6Avatar7success5errorySo06UIViewF0C_SSAA0A13CustomizationVSgSSSgA2RyAA0A6StatusVcyATctF",
-            "mangledName": "$s7LeanSDK0A0C9reconnect24presentingViewController0C2Id13customization11accessToken16destinationAlias0K6Avatar7success5errorySo06UIViewF0C_SSAA0A13CustomizationVSgSSSgA2RyAA0A6StatusVcyATctF",
+            "usr": "s:7LeanSDK0A0C9reconnect24presentingViewController0C2Id13customization11accessToken16destinationAlias0K6Avatar16customerMetadata7success5errorySo06UIViewF0C_SSAA0A13CustomizationVSgSSSgA3SyAA0A6StatusVcyAUctF",
+            "mangledName": "$s7LeanSDK0A0C9reconnect24presentingViewController0C2Id13customization11accessToken16destinationAlias0K6Avatar16customerMetadata7success5errorySo06UIViewF0C_SSAA0A13CustomizationVSgSSSgA3SyAA0A6StatusVcyAUctF",
             "moduleName": "LeanSDK",
             "declAttributes": [
               "AccessControl",
@@ -24035,7 +24065,7 @@
           {
             "kind": "Function",
             "name": "authorizeConsent",
-            "printedName": "authorizeConsent(customerId:consentId:failRedirectUrl:successRedirectUrl:customization:accessToken:destinationAlias:destinationAvatar:riskDetails:success:error:)",
+            "printedName": "authorizeConsent(customerId:consentId:failRedirectUrl:successRedirectUrl:bankId:customization:accessToken:destinationAlias:destinationAvatar:riskDetails:success:error:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -24065,6 +24095,21 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -24179,8 +24224,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7LeanSDK0A0C16authorizeConsent10customerId07consentF015failRedirectUrl07successiJ013customization11accessToken16destinationAlias0O6Avatar11riskDetails0K05errorySS_S3SAA0A13CustomizationVSgSSSgA2sA0a4RiskS0VSgyAA0A6StatusVcyAXctF",
-            "mangledName": "$s7LeanSDK0A0C16authorizeConsent10customerId07consentF015failRedirectUrl07successiJ013customization11accessToken16destinationAlias0O6Avatar11riskDetails0K05errorySS_S3SAA0A13CustomizationVSgSSSgA2sA0a4RiskS0VSgyAA0A6StatusVcyAXctF",
+            "usr": "s:7LeanSDK0A0C16authorizeConsent10customerId07consentF015failRedirectUrl07successiJ004bankF013customization11accessToken16destinationAlias0P6Avatar11riskDetails0K05errorySS_S4SSgAA0A13CustomizationVSgA3qA0a4RiskT0VSgyAA0A6StatusVcyAYctF",
+            "mangledName": "$s7LeanSDK0A0C16authorizeConsent10customerId07consentF015failRedirectUrl07successiJ004bankF013customization11accessToken16destinationAlias0P6Avatar11riskDetails0K05errorySS_S4SSgAA0A13CustomizationVSgA3qA0a4RiskT0VSgyAA0A6StatusVcyAYctF",
             "moduleName": "LeanSDK",
             "declAttributes": [
               "AccessControl",
@@ -24191,7 +24236,7 @@
           {
             "kind": "Function",
             "name": "authorizeConsent",
-            "printedName": "authorizeConsent(presentingViewController:customerId:consentId:failRedirectUrl:successRedirectUrl:customization:accessToken:destinationAlias:destinationAvatar:riskDetails:success:error:)",
+            "printedName": "authorizeConsent(presentingViewController:customerId:consentId:failRedirectUrl:successRedirectUrl:bankId:customization:accessToken:destinationAlias:destinationAvatar:riskDetails:success:error:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -24231,6 +24276,21 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
                 "printedName": "LeanSDK.LeanCustomization?",
                 "children": [
                   {
@@ -24341,8 +24401,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7LeanSDK0A0C16authorizeConsent24presentingViewController10customerId07consentI015failRedirectUrl07successlM013customization11accessToken16destinationAlias0R6Avatar11riskDetails0N05errorySo06UIViewG0C_S4SAA0A13CustomizationVSgSSSgA2vA0a4RiskV0VSgyAA0A6StatusVcyA_ctF",
-            "mangledName": "$s7LeanSDK0A0C16authorizeConsent24presentingViewController10customerId07consentI015failRedirectUrl07successlM013customization11accessToken16destinationAlias0R6Avatar11riskDetails0N05errorySo06UIViewG0C_S4SAA0A13CustomizationVSgSSSgA2vA0a4RiskV0VSgyAA0A6StatusVcyA_ctF",
+            "usr": "s:7LeanSDK0A0C16authorizeConsent24presentingViewController10customerId07consentI015failRedirectUrl07successlM004bankI013customization11accessToken16destinationAlias0S6Avatar11riskDetails0N05errorySo06UIViewG0C_S5SSgAA0A13CustomizationVSgA3tA0a4RiskW0VSgyAA0A6StatusVcyA0_ctF",
+            "mangledName": "$s7LeanSDK0A0C16authorizeConsent24presentingViewController10customerId07consentI015failRedirectUrl07successlM004bankI013customization11accessToken16destinationAlias0S6Avatar11riskDetails0N05errorySo06UIViewG0C_S5SSgAA0A13CustomizationVSgA3tA0a4RiskW0VSgyAA0A6StatusVcyA0_ctF",
             "moduleName": "LeanSDK",
             "declAttributes": [
               "AccessControl",
@@ -26855,35 +26915,35 @@
     {
       "filePath": "\/Users\/runner\/work\/link-sdk-ios-framework\/link-sdk-ios-framework\/LeanSDK\/Lean.swift",
       "kind": "StringLiteral",
-      "offset": 274,
+      "offset": 270,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/link-sdk-ios-framework\/link-sdk-ios-framework\/LeanSDK\/Lean.swift",
       "kind": "StringLiteral",
-      "offset": 314,
+      "offset": 310,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/link-sdk-ios-framework\/link-sdk-ios-framework\/LeanSDK\/Lean.swift",
       "kind": "StringLiteral",
-      "offset": 1031,
+      "offset": 1015,
       "length": 4,
       "value": "\"en\""
     },
     {
       "filePath": "\/Users\/runner\/work\/link-sdk-ios-framework\/link-sdk-ios-framework\/LeanSDK\/Lean.swift",
       "kind": "BooleanLiteral",
-      "offset": 1059,
+      "offset": 1043,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/link-sdk-ios-framework\/link-sdk-ios-framework\/LeanSDK\/Lean.swift",
       "kind": "StringLiteral",
-      "offset": 1088,
+      "offset": 1072,
       "length": 12,
       "value": "\"production\""
     },
@@ -26897,7 +26957,7 @@
     {
       "filePath": "\/Users\/runner\/work\/link-sdk-ios-framework\/link-sdk-ios-framework\/LeanSDK\/LeanController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14560,
+      "offset": 14365,
       "length": 5,
       "value": "false"
     }
