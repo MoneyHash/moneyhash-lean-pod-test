@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MoneyHashLeanTest'
-  s.version          = '1.0.12-beta.1'
+  s.version          = '1.0.12-dev.1'
   s.summary          = 'MoneyHash + Lean integration'
   s.description      = 'MoneyHash integration with Lean SDK using vendored xcframeworks.'
 
