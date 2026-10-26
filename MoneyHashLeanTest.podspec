@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MoneyHashLeanTest'
-  s.version          = '0.0.1-dev.4'
+  s.version          = '0.0.1-dev.5'
   s.summary          = 'MoneyHash + Lean integration'
   s.description      = 'MoneyHash integration with Lean SDK using vendored xcframeworks.'
 
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
     'MoneyHashLean.xcframework'
   ]
 
-  s.dependency 'MoneyHashCoreTest', '>= 0.0.1-dev.4', '< 1.0.0'
+  s.dependency 'MoneyHashCoreTest', '>= 0.0.1-dev.5', '< 1.0.0'
 
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
